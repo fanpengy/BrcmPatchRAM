@@ -140,14 +140,7 @@ static const uint8_t kBadChipsetCheckOriginal13_3[] =
 {
     0x81, 0xF9,              // cmp ecx
     0x9E, 0x0F, 0x00, 0x00,  // int 3998
-    0x77, 0x00               // ja short
-};
-
-static const uint8_t kBadChipsetCheckMask13_3[] =
-{
-    0xFF, 0xFF,
-    0xFF, 0xFF, 0xFF, 0xFF,
-    0xFF, 0x00
+    0x77, 0x1A               // ja short
 };
 
 static const uint8_t kBadChipsetCheckPatched13_3[] =
@@ -274,7 +267,7 @@ static void patched_cs_validate_page(vnode_t vp, memory_object_t pager, memory_o
             searchAndPatch(data, PAGE_SIZE, path, kBadChipsetCheckOriginal, kBadChipsetCheckPatched);
             // kBadChipsetCheckOriginal15 is a greater set of kBadChipsetCheckOriginal13_3, and thus will be applied first.
             searchAndPatchWithMask(data, PAGE_SIZE, path, kBadChipsetCheckOriginal15, sizeof(kBadChipsetCheckOriginal15), kBadChipsetCheckMask15, sizeof(kBadChipsetCheckMask15), kBadChipsetCheckPatched15, sizeof(kBadChipsetCheckPatched15), nullptr, 0);
-            searchAndPatchWithMask(data, PAGE_SIZE, path, kBadChipsetCheckOriginal13_3, sizeof(kBadChipsetCheckOriginal13_3), kBadChipsetCheckMask13_3, sizeof(kBadChipsetCheckOriginal13_3), kBadChipsetCheckPatched13_3, sizeof(kBadChipsetCheckPatched13_3), nullptr, 0);
+            searchAndPatch(data, PAGE_SIZE, path, kBadChipsetCheckOriginal13_3, kBadChipsetCheckPatched13_3);
             searchAndPatchWithMask(data, PAGE_SIZE, path, kSkipInternalControllerNVRAMCheck13_3, sizeof(kSkipInternalControllerNVRAMCheck13_3), kSkipInternalControllerNVRAMCheckMask13_3, sizeof(kSkipInternalControllerNVRAMCheckMask13_3), kSkipInternalControllerNVRAMCheckPatched13_3, sizeof(kSkipInternalControllerNVRAMCheckPatched13_3), nullptr, 0);
             searchAndPatchWithMask(data, PAGE_SIZE, path, kSkipInternalControllerNVRAMCheck15, sizeof(kSkipInternalControllerNVRAMCheck15), kSkipInternalControllerNVRAMCheckMask15, sizeof(kSkipInternalControllerNVRAMCheckMask15), kSkipInternalControllerNVRAMCheckPatched15, sizeof(kSkipInternalControllerNVRAMCheckPatched15), nullptr, 0);
             if (shouldPatchBoardId)
