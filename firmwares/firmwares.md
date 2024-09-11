@@ -122,6 +122,8 @@
   * BCM20702A1_001.002.014.1443.1463 (v5559)
 * [`0a5c:21fe`] HP Vegas 43142 combo (Broadcom 43142 Bluetooth 4.0 Adapter)
   * BCM43142A0_001.001.011.0161.0186 (v4282)
+* [`0a5c:22be`] Broadcom BCM20702 Bluetooth 4.0 USB Device
+  * BCM20702A0 (0557)
 * [`0a5c:640b`] HP Luffy 43228 + 20702 M.2 (Broadcom Bluetooth 4.0 Adapter)
   * BCM20702A1_001.002.014.1502.1769 (v5865)
 * [`0a5c:6410`] 20703A1 RAM download - DW1830 43602 (Dell Wireless 1830 Bluetooth 4.1 LE)
