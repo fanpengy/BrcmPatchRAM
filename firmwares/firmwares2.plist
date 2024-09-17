@@ -1331,7 +1331,7 @@
       <key>DisplayName</key>
       <string>Broadcom BCM20702 Bluetooth 4.0 USB Device</string>
       <key>FirmwareKey</key>
-      <string>BCM20702A0_0557</string>
+      <string>BCM20702A0_001.001.024.0228.0229_v4325</string>
       <key>IOClass</key>
       <string>BrcmPatchRAM2</string>
       <key>IOMatchCategory</key>
